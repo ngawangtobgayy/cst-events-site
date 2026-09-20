@@ -7,7 +7,7 @@ def load_events(path):
     return data["events"]
 
 def upcoming(events, today):
-    future = [e for e in events if e["date"] > today]
+    future = [e for e in events if e["date"] >= today]
 
     if any(e["date"] == today for e in future):
         future = [e for e in future if e["date"] == today]
